@@ -17,13 +17,14 @@ export const commonStyles = StyleSheet.create({
   },
   box: {
     flex: 1,
-    padding: 10,
+    padding: 5,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignContent: 'center',
   },
   text: {
+    padding: 4,
     borderWidth: 0,
     borderRadius: 10,
   },

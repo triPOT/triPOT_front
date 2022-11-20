@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
-import {commonStyles} from './styles';
+import {commonStyles} from './common.styles';
 
 const category = [
   {id: 'recruit', name: '#여행팟 구함'},
