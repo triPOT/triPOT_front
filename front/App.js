@@ -1,20 +1,3 @@
-<<<<<<< Updated upstream
-import React from 'react';
-import {SafeAreaView, View, Text} from 'react-native';
-import FirstScreen from './src/components/signup/FirstScreen';
-
-const App = () => {
-  return (
-    <SafeAreaView>
-      <View>
-        <FirstScreen />
-      </View>
-    </SafeAreaView>
-  );
-};
-
-export default App;
-=======
 import React, { Component } from 'react'
 import { Text, StyleSheet, View, Button} from 'react-native'
 
@@ -44,4 +27,3 @@ const AppContainer = createAppContainer(App);
 export default () => (
   <AppContainer />
 );
->>>>>>> Stashed changes
