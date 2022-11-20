@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {View, TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {View, TouchableOpacity, Text} from 'react-native';
+import {commonStyles} from './styles';
 
 const category = [
   {id: 'recruit', name: '#여행팟 구함'},
@@ -16,11 +17,11 @@ const Category = ({now = 'diary', onChange}) => {
   const [isSelecting, setIsSeleting] = useState(false);
 
   return isSelecting ? (
-    <View style={styles.container}>
+    <View style={commonStyles.container}>
       {category.map(c => (
         <TouchableOpacity
           key={c.id}
-          style={styles.category}
+          style={commonStyles.box}
           onPress={() => {
             setSelected(c);
             //onChange(c.id);
@@ -28,7 +29,7 @@ const Category = ({now = 'diary', onChange}) => {
           }}>
           <Text
             style={[
-              styles.text,
+              commonStyles.text,
               selected.id === c.id ? {backgroundColor: '#b0cbff'} : null,
             ]}>
             {c.name}
@@ -37,46 +38,14 @@ const Category = ({now = 'diary', onChange}) => {
       ))}
     </View>
   ) : (
-    <View style={styles.container}>
+    <View style={commonStyles.container}>
       <TouchableOpacity
-        style={styles.category}
+        style={commonStyles.box}
         onPress={() => setIsSeleting(!isSelecting)}>
-        <Text style={styles.text}>{selected.name}</Text>
+        <Text style={commonStyles.text}>{selected.name}</Text>
       </TouchableOpacity>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-    flexDirection: 'row',
-    backgroundColor: '#fff',
-    borderRadius: 10,
-    shadowColor: '#548EFF',
-    shadowOffset: {
-      width: 0,
-      height: 7,
-    },
-    shadowOpacity: 0.57,
-    shadowRadius: 9.51,
-
-    elevation: 15,
-  },
-  category: {
-    flex: 1,
-    padding: 10,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignContent: 'center',
-  },
-  text: {
-    padding: 5,
-    borderWidth: 0,
-    borderRadius: 10,
-    color: 'black',
-  },
-});
 
 export default Category;
