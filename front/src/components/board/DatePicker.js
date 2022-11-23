@@ -26,7 +26,7 @@ const DatePicker = () => {
     <View style={commonStyles.container}>
       <TouchableOpacity style={commonStyles.box}  onPress={showDatePicker}>
         <Text style={commonStyles.text}>{dates.startDate && dates.startDate.toLocaleDateString('ko-kr', { month: 'narrow', day: 'numeric' })}
-        &nbsp;/&nbsp;{dates.endDate && dates.endDate.toLocaleDateString('ko-kr', { month: 'short', day: 'numeric' })}</Text>
+        &nbsp;~&nbsp;{dates.endDate && dates.endDate.toLocaleDateString('ko-kr', { month: 'short', day: 'numeric' })}</Text>
         </TouchableOpacity>
     </View>
   );
