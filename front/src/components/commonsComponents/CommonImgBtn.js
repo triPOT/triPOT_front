@@ -8,7 +8,7 @@ const CommonImgBtn = (props) => {
         >
             <Image
                 style = {props.imgStyle}
-                source = {props.source}
+                source = {require(props.source)}
             />
         </TouchableOpacity>
     )
