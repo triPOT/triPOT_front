@@ -1,6 +1,6 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, StyleSheet, Button} from 'react-native';
-import Modal from '../commons/Modal';
+import Modal from '../commonsComponents/Modal';
 import {commonStyles} from './common.styles';
 
 const initialRegions = [
@@ -144,11 +144,15 @@ const Location = () => {
       </Modal>
       <View style={commonStyles.container}>
         <TouchableOpacity style={commonStyles.box} onPress={open}>
-          {(selected.length === 0) ? <Text style={commonStyles.text}>위치</Text>
-              : (selected.length === 1) ? <Text style={commonStyles.text}> {selected[0].name}</Text>
-                : <Text style={commonStyles.text}>
-                  {selected[0].name}외 {selected.length - 1}곳
-                </Text>}
+          {selected.length === 0 ? (
+            <Text style={commonStyles.text}>위치</Text>
+          ) : selected.length === 1 ? (
+            <Text style={commonStyles.text}> {selected[0].name}</Text>
+          ) : (
+            <Text style={commonStyles.text}>
+              {selected[0].name}외 {selected.length - 1}곳
+            </Text>
+          )}
         </TouchableOpacity>
       </View>
     </View>
