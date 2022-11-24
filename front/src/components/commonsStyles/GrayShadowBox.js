@@ -1,18 +1,24 @@
 import { StyleSheet } from "react-native";
-import { autoSetBorderRadius } from "../../customDimensions";
+// import { autoSetBorderRadius } from "../../customDimensions";
 
 const GrayShadowBox = StyleSheet.create({
-    grayshadowbox:{
-        shadowColor:"#000",
-        shadowOpacity: 0.2,
+  grayshadowbox: {
+    backgroundColor: "#fff",
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOpacity: 0.5,
         shadowRadius: 8,
-        shadowOffset:{
-            width:0,
-            height:0
+        shadowOffset: {
+          width: 0,
+          height: 0,
         },
-        backgroundColor: "#fff",
-        borderRadius: autoSetBorderRadius(15)
-    }
-})
+      },
+      android: {
+        elevation: 5,
+      },
+    }),
+  },
+});
 
 export default GrayShadowBox;
