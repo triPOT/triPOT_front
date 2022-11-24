@@ -5,7 +5,7 @@ import {Alert, Modal as OriginModal, StyleSheet, View} from 'react-native';
   /*
 visible: 이 속성값에 따라 모달이 생성됨(required)
 transparent: 배경 투명도 설정(default=false)
-modalStyle: 최상단 모달의 style 설정 
+style: 모달의 style 설정
 
 - 모달의 상태를 저장하는 변수 관리 필요(useState) 
 => ex) const [showModal, setShowModal] = useState(false);
@@ -28,7 +28,7 @@ const close = () => setShowModal(false);
 */
 }
 
-const Modal = ({visible, children, modalStyle, transparent = false}) => {
+const Modal = ({visible, children, style, transparent = false}) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -36,7 +36,7 @@ const Modal = ({visible, children, modalStyle, transparent = false}) => {
       animationType="fade"
       transparent={transparent}
       visible={visible}
-      style ={[styles.modalStyle, modalStyle]}
+      style={[styles.modalStyle, style]}
       onRequestClose={() => {
         Alert.alert('취소되었습니다.');
         setModalVisible(!modalVisible);
