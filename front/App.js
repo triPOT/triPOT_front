@@ -1,29 +1,18 @@
-import React, { Component } from 'react'
-import { Text, StyleSheet, View, Button} from 'react-native'
+import React from 'react';
+import { View, Text, SafeAreaView, TouchableOpacity} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native'; 
 
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-
-import FirstScreen from './src/components/signup/FirstScreen';
+import StackNavigation from './src/navigations/Stack';
+import SignUpScreen2 from './src/components/signup/SignUpScreen2';
 import SignUpScreen from './src/components/signup/SignUpScreen';
+import SignUpScreen3 from './src/components/signup/SignUpScreen3';
 
+const App = () => {
+  return (
+    <NavigationContainer>
+      <SignUpScreen3 />
+  </NavigationContainer>
+  );
+};
 
-const App = createStackNavigator(
-  {
-    SignUp: {
-      screen: SignUpScreen,
-    },
-    First: {
-      screen: FirstScreen,
-    },
-  },
-  {
-    initialRouteName: 'First' // 처음 보여 줄 화면을 설정합니다.
-  },
-);
-
-const AppContainer = createAppContainer(App);
-
-export default () => (
-  <AppContainer />
-);
+export default App;

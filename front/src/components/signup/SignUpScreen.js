@@ -1,4 +1,6 @@
-import React, { useState, useContext } from "react";
+// 회원가입 - 본인인증
+
+import React, { useState, useContext, Component } from "react";
 import {
     StyleSheet,
     Text,
@@ -7,11 +9,12 @@ import {
     SafeAreaView,
     TextInput,
 } from "react-native";
-import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
-const Tab = createMaterialTopTabNavigator();
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const SignUpScreen = ({ navigation }) => {
+
+const SignUpScreen = () => {
 
     return (
         <SafeAreaView style={styles.container} >
@@ -20,14 +23,15 @@ const SignUpScreen = ({ navigation }) => {
             </TouchableOpacity>
         </SafeAreaView>
     );
+    
 };
-
 export default SignUpScreen;
+
 
 const styles = StyleSheet.create({
     container: {
         alignItems: "center",
-        marginTop: "90%",
+        marginTop: "80%",
     },
     cergificationButton: {
         backgroundColor: "#548EFF",

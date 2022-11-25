@@ -1,4 +1,6 @@
-import React from "react";
+// 앱 처음 화면 - 회원가입이나 로그인
+
+import React, { Component } from "react";
 import {
     StyleSheet,
     Text,
@@ -8,8 +10,7 @@ import {
     Button,
 } from "react-native";
 
-const FirstScreen = ({ navigation, route }) => {
-
+const FirstScreen = ( {navigation} ) => {
     return (
         <SafeAreaView style={styles.container}>
             <Example style={{borderRadius: 100}}>
@@ -21,20 +22,24 @@ const FirstScreen = ({ navigation, route }) => {
                 <Text style={styles.title2}>triPOT</Text>
             </View>
             <View style={styles.buttonWrapper}>
-                <TouchableOpacity style={styles.signUpButton} onPress={() => navigation.navigate('SignUp')}>
+                <TouchableOpacity style={styles.signUpButton} onPress={() => navigation.navigate('signup')}>
                     <Text style={styles.signUpButtonText}>여행 시작하기</Text>
                 </TouchableOpacity>
                 <View style={styles.text}>
                     <Text style={styles.p}>이미 계정이 있다면</Text>
-                    <TouchableOpacity style={styles.signInButton} onPress={() => navigation.navigate('SignUp')}>
+                    <TouchableOpacity style={styles.signInButton} onPress={() => navigation.navigate('signup')}>
                         <Text style={styles.signInButtonText}>로그인</Text>
                     </TouchableOpacity>
                 </View>
             </View>
         </SafeAreaView>
     );
-};
+}
 export default FirstScreen;
+
+const goSignUpScreen = () => {
+    props.navigation.navigate('signup');
+}
 
 const Example = (props) => (
     <View style={[styles.example, props.style]}>
