@@ -37,9 +37,6 @@ const FirstScreen = ( {navigation} ) => {
 }
 export default FirstScreen;
 
-const goSignUpScreen = () => {
-    props.navigation.navigate('signup');
-}
 
 const Example = (props) => (
     <View style={[styles.example, props.style]}>

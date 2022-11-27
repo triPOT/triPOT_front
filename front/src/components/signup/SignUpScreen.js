@@ -14,11 +14,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
-const SignUpScreen = () => {
+const SignUpScreen = ( {navigation} ) => {
 
     return (
         <SafeAreaView style={styles.container} >
-            <TouchableOpacity style={styles.cergificationButton}>
+            <TouchableOpacity style={styles.cergificationButton} onPress={() => navigation.navigate('signup2')}>
                 <Text style={styles.buttonText}>본인 인증하기</Text>
             </TouchableOpacity>
         </SafeAreaView>

@@ -11,7 +11,7 @@ import {
     Button,
 } from "react-native";
 
-const SignUpScreen2 = () => {
+const SignUpScreen2 = ( {navigation} ) => {
     const [userId, setUserId] = useState('');
     const [userPasssword, setUserPassword] = useState('');
     const [userPassswordchk, setUserPasswordchk] = useState('');

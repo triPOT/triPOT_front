@@ -10,7 +10,7 @@ import SignUpScreen3 from './src/components/signup/SignUpScreen3';
 const App = () => {
   return (
     <NavigationContainer>
-      <SignUpScreen3 />
+      <SignUpScreen2 />
   </NavigationContainer>
   );
 };
