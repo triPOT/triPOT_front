@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {SafeAreaView, View} from 'react-native';
-import FilteringBar from './src/components/board/FilteringBar';
+import {SafeAreaView} from 'react-native';
+import BoardMain from './src/components/board/BoardMain';
 
 const App = () => {
   return (
     <SafeAreaView>
-      <FilteringBar />
+      <BoardMain />
     </SafeAreaView>
   );
 };
