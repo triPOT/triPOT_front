@@ -6,12 +6,10 @@ import logo from '../../img/logo_top.jpg';
 
 const EdgeLayout = ({children}) => {
   return (
-    <SafeAreaView>
       <View style={styles.layout}>
         <Image source={logo} style={styles.topLogo} />
         <View style={styles.container}>{children}</View>
       </View>
-    </SafeAreaView>
   );
 };
 
