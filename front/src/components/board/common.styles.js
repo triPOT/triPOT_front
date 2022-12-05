@@ -1,24 +1,22 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
+import GrayShadowBox from '../commonsStyles/GrayShadowBox';
 
 export const commonStyles = StyleSheet.create({
+  layout: {
+    flex: 1,
+    marginVertical: 4,
+    marginHorizontal: 5,
+  },
   container: {
-    display: 'flex',
     flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
     backgroundColor: '#fff',
     borderRadius: 10,
     shadowColor: '#548EFF',
-    shadowOffset: {
-      width: 0,
-      height: 7,
-    },
-    shadowOpacity: 0.57,
-    shadowRadius: 9.51,
-    elevation: 15,
+    ...GrayShadowBox.grayshadowbox,
   },
   box: {
-    flex: 1,
-    padding: 5,
-    display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignContent: 'center',

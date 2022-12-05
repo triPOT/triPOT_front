@@ -33,9 +33,11 @@ const DatePicker = () => {
   };
 
   return (
-    <View>
+    <View style={commonStyles.layout}>
       <View style={commonStyles.container}>
-        <CommonTextBtn  onPress={open} style={commonStyles.box} textStyle={commonStyles.text} content={`${changeDateFormat(date.startDate)} ~ ${changeDateFormat(date.endDate)}`}/>
+        <CommonTextBtn onPress={open} style={commonStyles.box} textStyle={commonStyles.text}>
+          {changeDateFormat(date.startDate)} ~ {changeDateFormat(date.endDate)}
+        </CommonTextBtn>
       </View>
       <Modal visible={showModal}>
         <View style={{
@@ -43,8 +45,8 @@ const DatePicker = () => {
             marginTop: 10,
             flexDirection: 'row',
             justifyContent: 'space-between',}}>
-          <CommonTextBtn onPress={onCancel} textStyle={{color: '#A4C3FF'}} content='취소' />
-          <CommonTextBtn onPress={onSave} textStyle={{color: '#A4C3FF'}} content='완료' />
+          <CommonTextBtn onPress={onCancel} textStyle={{color: '#A4C3FF'}}>취소</CommonTextBtn>
+          <CommonTextBtn onPress={onSave} textStyle={{color: '#A4C3FF'}}>완료</CommonTextBtn>
         </View>
         <Calendar
           startDate={today}

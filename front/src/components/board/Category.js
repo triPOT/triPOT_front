@@ -8,16 +8,14 @@ const category = [
   {id: 'tips', name: '#여행 꿀팁'},
 ];
 
-const Category = ({now = 'diary', onChange}) => {
+const Category = ({isSelecting, setIsSelecting, now = 'diary'}) => {
   // 현재 선택된 카테고리가 저장된 변수
   const [selected, setSelected] = useState(
     ...category.filter(c => c.id === now),
   );
-  // 카테고리 메뉴 확장 유무 결정 boolean
-  const [isSelecting, setIsSeleting] = useState(false);
 
   return isSelecting ? (
-    <View style={commonStyles.container}>
+    <View style={[commonStyles.container, commonStyles.layout]}>
       {category.map(c => (
         <TouchableOpacity
           key={c.id}
@@ -25,7 +23,7 @@ const Category = ({now = 'diary', onChange}) => {
           onPress={() => {
             setSelected(c);
             //onChange(c.id);
-            setIsSeleting(false);
+            setIsSelecting(false);
           }}>
           <Text
             style={[
@@ -38,10 +36,10 @@ const Category = ({now = 'diary', onChange}) => {
       ))}
     </View>
   ) : (
-    <View style={commonStyles.container}>
+    <View style={[commonStyles.container, commonStyles.layout, {flex: 2}]}>
       <TouchableOpacity
         style={commonStyles.box}
-        onPress={() => setIsSeleting(!isSelecting)}>
+        onPress={() => setIsSelecting(true)}>
         <Text style={commonStyles.text}>{selected.name}</Text>
       </TouchableOpacity>
     </View>

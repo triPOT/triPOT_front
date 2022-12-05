@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, Button} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import Modal from '../commonsComponents/Modal';
 import {commonStyles} from './common.styles';
+import CommonTextBtn from '../commonsComponents/CommonTextBtn';
 
 const initialRegions = [
   {
@@ -112,7 +113,7 @@ const Location = () => {
   };
 
   return (
-    <View>
+    <View style={commonStyles.layout}>
       <Modal visible={showModal} close={close}>
         <View
           style={{
@@ -121,12 +122,12 @@ const Location = () => {
             flexDirection: 'row',
             justifyContent: 'space-between',
           }}>
-          <TouchableOpacity onPress={close}>
-            <Text style={{color: '#A4C3FF'}}>취소</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={onSave}>
-            <Text style={{color: '#A4C3FF'}}>완료</Text>
-          </TouchableOpacity>
+          <CommonTextBtn onPress={close} textStyle={{color: '#A4C3FF'}}>
+            취소
+          </CommonTextBtn>
+          <CommonTextBtn onPress={onSave} textStyle={{color: '#A4C3FF'}}>
+            완료
+          </CommonTextBtn>
         </View>
         <View style={styles.container}>
           {regions.map(r => (
@@ -142,7 +143,12 @@ const Location = () => {
           ))}
         </View>
       </Modal>
-      <View style={commonStyles.container}>
+      <View
+        style={[
+          commonStyles.container,
+          commonStyles.layout,
+          {marginVertical: 0},
+        ]}>
         <TouchableOpacity style={commonStyles.box} onPress={open}>
           {selected.length === 0 ? (
             <Text style={commonStyles.text}>위치</Text>
@@ -164,16 +170,16 @@ export default Location;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 15,
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
+    alignContent: 'center',
   },
   itemContainer: {
     width: 80,
     height: 50,
     padding: 10,
-    marginVertical: 10,
+    margin: 10,
     borderWidth: 1,
     borderColor: '#A4C3FF',
     borderRadius: 10,
