@@ -1,38 +1,42 @@
 import React from 'react';
-import {View, Image, StyleSheet} from 'react-native';
+import {View, Image, StyleSheet, SafeAreaView} from 'react-native';
 import GrayShadowBox from '../commonsStyles/GrayShadowBox';
+import { heightPercentage, widthPercentage, autoSetBorderRadius } from '../../customDimensions';
 import logo from '../../img/logo_top.jpg';
 
 const EdgeLayout = ({children}) => {
   return (
-    <View style={styles.layout}>
-      <Image source={logo} style={styles.topLogo} />
-      <View style={styles.container}>{children}</View>
-    </View>
+    <SafeAreaView>
+      <View style={styles.layout}>
+        <Image source={logo} style={styles.topLogo} />
+        <View style={styles.container}>{children}</View>
+      </View>
+    </SafeAreaView>
   );
 };
 
-// 아래는 피그마에 있는 픽셀의 단위를 그대로 가져왔으므로,
-// 추후에 공통 단위로 변경 필수
 const styles = StyleSheet.create({
   topLogo: {
-    width: 90,
+    width: widthPercentage(80),
     resizeMode: 'contain',
     alignSelf: 'center',
     position: 'absolute',
     zIndex: 10,
     elevation: 10,
-    top: -35,
+    top: widthPercentage(-45),
   },
   layout: {
-    padding: 14,
-    paddingTop: 30,
+    paddingVertical: heightPercentage(14),
+    paddingHorizontal: heightPercentage(14),
+    paddingTop: heightPercentage(30),
   },
   container: {
     ...GrayShadowBox.grayshadowbox,
-    height: 865,
-    borderRadius: 15,
-    padding: 23,
+    height: heightPercentage(865),
+    borderRadius: 15, // 추후 공통 단위로 변경 필요
+    paddingVertical: heightPercentage(23),
+    paddingHorizontal: widthPercentage(23),
+    paddingTop: heightPercentage(60),
     position: 'relative',
   },
 });
