@@ -1,19 +1,25 @@
 /* eslint-disable react-native/no-inline-styles */
+import { NavigationContainer} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import {SafeAreaView, View, Text} from 'react-native';
 import BackBtn from './src/components/commonsComponents/BackBtn';
 import GrayShadowBox from './src/components/commonsStyles/GrayShadowBox';
+import ProfileEdit from './src/screens/ProfileEdit';
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <View style={[GrayShadowBox.grayshadowbox, {margin: 15, width: '100%'}]}>
-        <Text style={{margin: 20}}>HI</Text>
-        <BackBtn
-          style={{margin:10, width:15, height:15}}
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name = 'ProfileEdit'
+          component = {ProfileEdit}
+          options = {{
+            headerShown:false,
+          }}
         />
-      </View>
-    </SafeAreaView>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
