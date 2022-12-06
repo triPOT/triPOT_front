@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import FirstScreen from './src/components/signup/FirstScreen';
 import SignUpScreen from './src/components/signup/SignUpScreen';
@@ -18,4 +18,6 @@ const FirstStack = () => {
   );
 };
 
-export default FirstStack;
+export default FirstStack; */
+
+// 이거 없어도 됨

@@ -1,3 +1,5 @@
+// 이용약관 동의
+
 import React, { useState } from "react";
 import {
     StyleSheet,
@@ -9,28 +11,30 @@ import {
     ScrollView,
     Button,
 } from "react-native";
-import { RadioButton } from "react-native-paper";
+import { Checkbox } from "react-native-paper";
 
-const SignUpScreen3 = () => {
-    const [checked, setChecked] = useState(false);
+const SignUpScreen3 = ({navigation}) => {
+    const [checked1, setChecked1] = React.useState(false);
+    const [checked2, setChecked2] = React.useState(false);
+    const [checked3, setChecked3] = React.useState(false);
     
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.box1}>
-                <RadioButton
-                    style={styles.radio}
-                    status={checked === 'false' ? 'checked' : 'unchecked' }
-                    onPress={() => setChecked('true')}
+                <Checkbox
+                    style={styles.checkbox}
+                    status={checked1 ? 'checked' : 'unchecked' }
+                    onPress={() => setChecked1(!checked1)}
                 />
                 <Text style={styles.box1text}>
                     전부 동의합니다.
                 </Text>
             </View>
             <View style={styles.box2}>
-                <RadioButton
-                    style={styles.radio}
-                    status={checked === 'false' ? 'checked' : 'unchecked' }
-                    onPress={() => setChecked('true')}
+                <Checkbox
+                    style={styles.checkbox}
+                    status={checked2 ? 'checked' : 'unchecked' }
+                    onPress={() => setChecked2(!checked2)}
                 />
                 <Text style={styles.box2text}>*triPOT 이용약관에 동의</Text>
                 <ScrollView style={styles.scroll}>
@@ -38,16 +42,16 @@ const SignUpScreen3 = () => {
                 </ScrollView>
             </View>
             <View style={styles.box3}>
-                <RadioButton
-                    style={styles.radio}
-                    status={checked === 'false' ? 'checked' : 'unchecked' }
-                    onPress={() => setChecked('true')}
+                <Checkbox
+                    style={styles.checkbox3}
+                    status={checked3 ? 'checked' : 'unchecked' }
+                    onPress={() => setChecked3(!checked3)}
                 />
                 <Text style={styles.box3text}>*개인 정보 수집 및 제공 동의</Text>
-                <TouchableOpacity style={styles.button2}>
-                    <Text style={styles.button2text}>원문 보기</Text>
-                </TouchableOpacity>
             </View>
+            <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('signup4')}>
+                <Text style={styles.nextbuttontext}>계속하기</Text>
+            </TouchableOpacity>
         </SafeAreaView>
     );
 }
@@ -55,14 +59,18 @@ export default SignUpScreen3;
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: "center",
+        marginLeft: 50,
+    },
+    checkbox: {
+        color: "#548EFF",
     },
     box1: {
         flexDirection: 'row',
-        marginTop: 120,
+        marginTop: 70,
     },
     box1text: {
         paddingTop: 7,
+        paddingLeft: 7,
     },
     box2: {
         flexDirection: 'row',
@@ -70,9 +78,10 @@ const styles = StyleSheet.create({
     },
     box2text: {
         paddingTop: 7,
+        paddingLeft: 7,
     },
     scroll: {
-        backgroundColor: "blue",
+        
     },
     scrolltext: {
         fontSize: 17,
@@ -83,6 +92,27 @@ const styles = StyleSheet.create({
     },
     box3text: {
         paddingTop: 7,
+        paddingLeft: 7,
     },
-
+    nextbutton: {
+        marginLeft: 60,
+        backgroundColor: "#548EFF",
+        color: "white",
+        width: 200,
+        alignItems: "center",
+        justifyContent: 'center',
+        borderRadius: 15,
+        marginTop: 50,
+        height: 40,
+        shadowColor: "gray",
+        shadowOpacity: 0.5,
+        shadowOffset: {
+            height: 5
+        },
+    },
+    nextbuttontext: {
+        color: "white",
+        fontSize: 16,
+        fontWeight: "600",
+    }
 });

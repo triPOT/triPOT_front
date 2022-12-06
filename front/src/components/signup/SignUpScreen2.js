@@ -40,8 +40,8 @@ const SignUpScreen2 = ( {navigation} ) => {
                     onChangeText={(userPassswordchk) => setUserPasswordchk(userPassswordchk)}
                 />
             </View>
-            <TouchableOpacity style={styles.nextbutton}>
-                <Text style={styles.nextbuttontext}>다음</Text>
+            <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('signup3')}>
+                <Text style={styles.nextbuttontext}>계속하기</Text>
             </TouchableOpacity>
         </SafeAreaView>
     );
