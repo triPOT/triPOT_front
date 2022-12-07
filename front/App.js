@@ -5,7 +5,7 @@ import BoardMain from './src/components/board/BoardMain';
 
 const App = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{flex: 1}}>
       <BoardMain />
     </SafeAreaView>
   );

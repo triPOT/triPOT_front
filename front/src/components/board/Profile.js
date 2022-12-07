@@ -1,15 +1,27 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
-import { heightPercentage, widthPercentage } from '../../customDimensions';
+import {View, Text, Image, StyleSheet} from 'react-native';
+import {heightPercentage, widthPercentage} from '../../customDimensions';
 
-const Profile = ({ profileImage, nickname, name }) => {
-  return <View style={styles.container}>
-    <Image source={{ uri: profileImage }} style={styles.profileImage} />
-    <View style={styles.infoBox}>
-      <Text style={styles.badge}>{nickname}</Text>
-      <Text style={styles.name}>{name}</Text>
+const Profile = ({profileImage, rank, name}) => {
+  const rankProps =
+    rank === '숙련된 여행자'
+      ? {backgroundColor: 'beige'}
+      : rank === '익숙한 여행자'
+      ? {backgroundColor: 'lightblue'}
+      : {backgroundColor: '#efefef'}; // 초행길 여행자
+
+  return (
+    <View style={styles.container}>
+      <Image source={{uri: profileImage}} style={styles.profileImage} />
+      <View style={styles.infoBox}>
+        <Text
+          style={[styles.badge, {backgroundColor: rankProps.backgroundColor}]}>
+          {rank}
+        </Text>
+        <Text style={styles.name}>{name}</Text>
+      </View>
     </View>
-  </View>
+  );
 };
 
 export default Profile;
@@ -32,11 +44,10 @@ const styles = StyleSheet.create({
   badge: {
     paddingHorizontal: widthPercentage(8),
     paddingVertical: heightPercentage(2),
-    backgroundColor: 'lightblue',
-    borderRadius: 4,  // 추후 공용 단위로 변경 필요
-    fontSize: 8,      // 추후 공용 단위로 변경 필요
+    borderRadius: widthPercentage(4),
+    fontSize: 8, // 추후 공용 단위로 변경 필요
   },
   name: {
-    fontSize: 12,     // 추후 공용 단위로 변경 필요
+    fontSize: 12, // 추후 공용 단위로 변경 필요
   },
 });
