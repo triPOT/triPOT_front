@@ -4,7 +4,7 @@ import GrayShadowBox from '../commonsStyles/GrayShadowBox';
 export const commonStyles = StyleSheet.create({
   layout: {
     flex: 1,
-    marginVertical: 4,
+    marginVertical: 5,
     marginHorizontal: 5,
   },
   container: {

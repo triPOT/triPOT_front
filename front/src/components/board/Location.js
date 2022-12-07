@@ -147,7 +147,7 @@ const Location = () => {
         style={[
           commonStyles.container,
           commonStyles.layout,
-          {marginVertical: 0},
+          {marginVertical: 0, paddingVertical: 0}
         ]}>
         <TouchableOpacity style={commonStyles.box} onPress={open}>
           {selected.length === 0 ? (

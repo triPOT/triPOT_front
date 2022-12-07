@@ -15,7 +15,7 @@ const Category = ({isSelecting, setIsSelecting, now = 'diary'}) => {
   );
 
   return isSelecting ? (
-    <View style={[commonStyles.container, commonStyles.layout]}>
+    <View style={[commonStyles.container, commonStyles.layout, {flex: 2}]}>
       {category.map(c => (
         <TouchableOpacity
           key={c.id}
@@ -36,7 +36,7 @@ const Category = ({isSelecting, setIsSelecting, now = 'diary'}) => {
       ))}
     </View>
   ) : (
-    <View style={[commonStyles.container, commonStyles.layout, {flex: 2}]}>
+    <View style={[  commonStyles.container, commonStyles.layout, {flex: 2}]}>
       <TouchableOpacity
         style={commonStyles.box}
         onPress={() => setIsSelecting(true)}>

@@ -3,11 +3,12 @@ import {View, StyleSheet} from 'react-native';
 import Category from './Category';
 import Location from './Location';
 import DatePicker from './DatePicker';
+import { heightPercentage } from '../../customDimensions';
 
 const FilteringBar = () => {
   const [isSelecting, setIsSelecting] = useState(false);
   return (
-    <View style={{height: 130}}>
+    <View style={{height: heightPercentage(130)}}>
       <View style={styles.container}>
         <Category isSelecting={isSelecting} setIsSelecting={setIsSelecting} />
         {!isSelecting && <Location />}
