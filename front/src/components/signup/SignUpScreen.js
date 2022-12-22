@@ -21,6 +21,9 @@ const SignUpScreen = ( {navigation} ) => {
             <TouchableOpacity style={styles.cergificationButton} onPress={() => navigation.navigate('signup2')}>
                 <Text style={styles.buttonText}>본인 인증하기</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('first')}>
+                <Text style={styles.buttonText2}>뒤로 가기</Text>
+            </TouchableOpacity>
         </SafeAreaView>
     );
     
@@ -31,10 +34,10 @@ export default SignUpScreen;
 const styles = StyleSheet.create({
     container: {
         alignItems: "center",
-        marginTop: "80%",
+        marginTop: "75%",
     },
     cergificationButton: {
-        backgroundColor: "#548EFF",
+        backgroundColor: "#9FBCF5",
         width: "45%",
         paddingTop: 10,
         paddingBottom: 10,
@@ -50,6 +53,12 @@ const styles = StyleSheet.create({
         fontSize: 17,
         fontWeight: "600",
         color: "white",
+    },
+    buttonText2: {
+        marginTop: "50%",
+        fontSize: 15,
+        fontWeight: "600",
+        textDecorationLine: "underline"
     },
 
 });

@@ -40,10 +40,13 @@ const SignUpScreen4 = ({navigation}) => {
                 style={styles.input}
             />
             <Text style={styles.hiddentext}>
-                사는 곳은 다른 사람에게 보이지 않아요!
+                * 사는 곳은 다른 사람에게 보이지 않아요!
             </Text>
             <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('signup6')}>
                 <Text style={styles.nextbuttontext}>계속하기</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('signup3')}>
+                <Text style={styles.buttonText2}>뒤로 가기</Text>
             </TouchableOpacity>
         </SafeAreaView>
     )
@@ -80,6 +83,7 @@ const styles = StyleSheet.create({
     hiddentext: {
         fontSize: 10,
         marginTop: 7,
+        color: "#FF0099",
     },
     nextbutton: {
         backgroundColor: "#548EFF",
@@ -100,5 +104,11 @@ const styles = StyleSheet.create({
         color: "white",
         fontSize: 16,
         fontWeight: "600",
-    }
+    },
+    buttonText2: {
+        marginTop: 20,
+        fontSize: 15,
+        fontWeight: "600",
+        textDecorationLine: "underline"
+    },
 })

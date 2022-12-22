@@ -27,9 +27,10 @@ const SignUpScreen7 = ({navigation}) => {
             <Text style={styles.text3}>
                 여러분의 즐거운 팟을 응원합니다.
             </Text>
-            <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('signup6')}>
-                <Text style={styles.nextbuttontext}>로그인 하러 가기</Text>
+            <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('first')}>
+                <Text style={styles.nextbuttontext}>triPOT 시작하기</Text>
             </TouchableOpacity>
+            
         </SafeAreaView>
     )
 }
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     notice1: {
-        fontSize: 14,
+        fontSize: 15,
         marginTop: 80,
         color: "black",
     },

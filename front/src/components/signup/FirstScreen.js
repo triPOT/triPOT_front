@@ -27,7 +27,7 @@ const FirstScreen = ( {navigation} ) => {
                 </TouchableOpacity>
                 <View style={styles.text}>
                     <Text style={styles.p}>이미 계정이 있다면</Text>
-                    <TouchableOpacity style={styles.signInButton} onPress={() => navigation.navigate('signup')}>
+                    <TouchableOpacity style={styles.signInButton} onPress={() => navigation.navigate('signin')}>
                         <Text style={styles.signInButtonText}>로그인</Text>
                     </TouchableOpacity>
                 </View>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         width: 150,
         height: 150,
         marginTop: "35%",
-        backgroundColor: "#548EFF",
+        backgroundColor: "#A4C3FF",
         justifyContent: 'center'
     },
     centeredText:{
@@ -83,11 +83,11 @@ const styles = StyleSheet.create({
         fontSize: 40,
         fontStyle: "italic",
         fontWeight: "700",
-        color: "#548EFF",
+        color: "#9FBCF5",
         paddingTop: 20,
     },
     signUpButton: {
-        backgroundColor: "#548EFF",
+        backgroundColor: "#9FBCF5",
         color: "white",
         width: "55%",
         alignItems: "center",
@@ -109,8 +109,7 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
     signInButtonText: {
-        marginTop: 1,
-        color: "#548EFF",
+        color: "#9FBCF5",
         fontSize: 15,
         fontWeight: "600",
         textDecorationLine: "underline"

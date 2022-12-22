@@ -9,6 +9,7 @@ import {
     TouchableOpacity,
     SafeAreaView,
     Button,
+    
 } from "react-native";
 
 
@@ -21,11 +22,13 @@ const SignUpScreen6 = ({navigation}) => {
             <Text style={styles.text}>
                 이메일
             </Text>
-            <TextInput 
-                style={styles.input}
-            />
+            <TextInput style={styles.input}/> 
+            <Text>@</Text>
             <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('signup7')}>
                 <Text style={styles.nextbuttontext}>저장하기</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('signup4')}>
+                <Text style={styles.buttonText2}>뒤로 가기</Text>
             </TouchableOpacity>
         </SafeAreaView>
     )
@@ -52,9 +55,10 @@ const styles = StyleSheet.create({
         borderStyle: "solid",
         borderRadius: 15,
         borderColor: "#548EFF",
-        width: 200,
+        width: 130,
         height: 40,
         paddingLeft: 15,
+
     },
     nextbutton: {
         backgroundColor: "#548EFF",
@@ -75,5 +79,11 @@ const styles = StyleSheet.create({
         color: "white",
         fontSize: 16,
         fontWeight: "600",
-    }
+    },
+    buttonText2: {
+        marginTop: 20,
+        fontSize: 15,
+        fontWeight: "600",
+        textDecorationLine: "underline"
+    },
 })

@@ -52,6 +52,9 @@ const SignUpScreen3 = ({navigation}) => {
             <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('signup4')}>
                 <Text style={styles.nextbuttontext}>계속하기</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('signup2')}>
+                <Text style={styles.buttonText2}>뒤로 가기</Text>
+            </TouchableOpacity>
         </SafeAreaView>
     );
 }
@@ -59,10 +62,10 @@ export default SignUpScreen3;
 
 const styles = StyleSheet.create({
     container: {
-        marginLeft: 50,
+        alignItems: "center",
     },
     checkbox: {
-        color: "#548EFF",
+        color: "8BACEB",
     },
     box1: {
         flexDirection: 'row',
@@ -95,14 +98,13 @@ const styles = StyleSheet.create({
         paddingLeft: 7,
     },
     nextbutton: {
-        marginLeft: 60,
-        backgroundColor: "#548EFF",
+        backgroundColor: "#8BACEB",
         color: "white",
         width: 200,
         alignItems: "center",
         justifyContent: 'center',
         borderRadius: 15,
-        marginTop: 50,
+        marginTop: 30,
         height: 40,
         shadowColor: "gray",
         shadowOpacity: 0.5,
@@ -114,5 +116,11 @@ const styles = StyleSheet.create({
         color: "white",
         fontSize: 16,
         fontWeight: "600",
-    }
+    },
+    buttonText2: {
+        marginTop: 20,
+        fontSize: 15,
+        fontWeight: "600",
+        textDecorationLine: "underline"
+    },
 });
